@@ -610,14 +610,14 @@
           <div class="section_header_sub"></div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn"><a href="assets/img/our_works/big_img/1.png"><img class="preview" src="assets/img/our_works/1.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.1s"><a href="assets/img/our_works/big_img/2.png"><img class="preview" src="assets/img/our_works/2.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.2s"><a href="assets/img/our_works/big_img/3.png"><img class="preview" src="assets/img/our_works/3.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.3s"><a href="assets/img/our_works/big_img/4.png"><img class="preview" src="assets/img/our_works/4.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.4s"><a href="assets/img/our_works/big_img/5.png"><img class="preview" src="assets/img/our_works/5.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.5s"><a href="assets/img/our_works/big_img/6.png"><img class="preview" src="assets/img/our_works/6.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.6s"><a href="assets/img/our_works/big_img/7.png"><img class="preview" src="assets/img/our_works/7.png" alt="window"></a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.7s"><a href="assets/img/our_works/big_img/8.png"><img class="preview" src="assets/img/our_works/8.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn"><a href="#1"><img class="preview" src="assets/img/our_works/1.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.1s"><a href="#2"><img class="preview" src="assets/img/our_works/2.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.2s"><a href="#3"><img class="preview" src="assets/img/our_works/3.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.3s"><a href="#4"><img class="preview" src="assets/img/our_works/4.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.4s"><a href="#5"><img class="preview" src="assets/img/our_works/5.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.5s"><a href="#6"><img class="preview" src="assets/img/our_works/6.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.6s"><a href="#7"><img class="preview" src="assets/img/our_works/7.png" alt="window"></a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center wow fadeIn" data-wow-delay="0.7s"><a href="#8"><img class="preview" src="assets/img/our_works/8.png" alt="window"></a></div>
         </div>
       </div>
     </section>
@@ -859,12 +859,12 @@
                      <img src="assets/img/modal_calc/balkon/type3.png" alt="Тип3">
                      <img src="assets/img/modal_calc/balkon/type4.png" alt="Тип4">
                    </div>
-                <input class="form-control" id="width" type="text" placeholder="Ширина" required>
+                <input class="form-control" name="width" id="width" type="text" placeholder="Ширина" required>
                 <label for="width">мм</label>
                 <div class="multiplication"><strong>&times;</strong></div>
-                <input class="form-control" id="height" type="text" placeholder="Высота" required>
+                <input class="form-control" name="height" id="height" type="text" placeholder="Высота" required>
                 <label for="height">мм</label>
-                <button type="submit" class="button popup_calc_button">Далее</button>
+                <button type="submit" class="button popup_calc_button" disabled>Далее</button>
               </form>
             </div>
         </div>
@@ -896,7 +896,7 @@
                      <span class="label">Теплое</span>
                  </label>
 
-                 <button class="button popup_calc_profile_button">Далее</button>
+                 <button class="button popup_calc_profile_button" disabled>Далее</button>
             </div>
         </div>
     </div> 
@@ -918,6 +918,6 @@
         </div>
     </div>
 
-   <script src="script.js"> </script>
+   <script src="/src/js/main.js"> </script>
   </body>
 </html>

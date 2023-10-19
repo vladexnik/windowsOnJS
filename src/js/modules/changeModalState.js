@@ -1,7 +1,7 @@
 
 import checkNumInputs from './checkNumInputs';
 
-const changeModalState=(state)=>{
+const changeModalState=(state, validation, buttonSelector)=>{
 
     const windowForm=document.querySelectorAll('.balcon_icons_img'),
         windowWidth=document.querySelectorAll('#width'),
@@ -9,11 +9,8 @@ const changeModalState=(state)=>{
         windowType=document.querySelectorAll('#view_type'),
         windowProfile=document.querySelectorAll('.checkbox');
 
-    
     checkNumInputs('#width');
     checkNumInputs('#height');
-
-    
 
     function bindActionstoElements(event,elem, prop){
         elem.forEach((item,i)=>{
@@ -23,10 +20,11 @@ const changeModalState=(state)=>{
 
                     case 'SPAN':
                         state[prop]=i;
-                        console.log('span')
                         break;
                     
                     case 'INPUT':
+
+
                         if(item.getAttribute('type')==='checkbox'){
                             i===0 ? state[prop]='Холодное' : state[prop]='Тёплое';
 
@@ -38,6 +36,7 @@ const changeModalState=(state)=>{
                             })
                         }
                         else { 
+                            if(windowHeight.length)
                             state[prop]=item.value;
                         }
                        break;
@@ -47,24 +46,25 @@ const changeModalState=(state)=>{
                         break;
 
                 }
-                console.log(state);
+        //        
+                const isValid = validation.every((key) => typeof state[key] ==='number' ? state[key] !== undefined : !!state[key]);
+                const button = document.querySelector(buttonSelector);
+                if (isValid) {
+                    button.removeAttribute('disabled');
+                } else {
+                    button.setAttribute('disabled', true);
+                }
+
+                
             })
         });
     }
-    // windowForm.forEach((item,i)=>{
-    //     item.addEventListener('click', ()=>{
-    //         state.form=i;
-    //         console.log(state);
-    //     })
-    // });
     
     bindActionstoElements('click', windowForm, 'formOfWindow')
     bindActionstoElements('input', windowHeight,'height');
     bindActionstoElements('input', windowWidth,'width');
     bindActionstoElements('change', windowType, 'windowType');
     bindActionstoElements('change', windowProfile, 'windowProfile');
-
-
 
 }
 

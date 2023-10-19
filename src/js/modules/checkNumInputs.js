@@ -8,7 +8,6 @@ const checkNumInputs=(selector)=>{
         })
     });
 
-
 }
 
 export default checkNumInputs;

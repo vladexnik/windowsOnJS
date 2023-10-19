@@ -1,4 +1,7 @@
 import checkNumInputs from './checkNumInputs';
+import { db } from './firebaseConfig';
+import { addDoc, collection, doc, setDoc } from "firebase/firestore"; 
+
 
 const forms=(state)=>{
 
@@ -15,11 +18,12 @@ const forms=(state)=>{
 
     const postData=async (url, data)=>{
         document.querySelector('.status').textContent=message.loading;
-        let res=await fetch(url, {
-                method: "POST",
-                body: data
-            });   
-            return await res.text();
+        const payload = {};
+        data.forEach((value,key)=>{
+            payload[key]=value;
+        })        
+        await addDoc(collection(db, "orders"), payload); 
+
     }
 
     form.forEach(item=>{
@@ -39,10 +43,11 @@ const forms=(state)=>{
             }
             postData('assets/server.php', formData)
                 .then(res=> {
-                    console.log(res);
+                    
                     statusMessage.textContent=message.success;
                 })
-                .catch(()=>{
+                .catch((e)=>{
+                    
                     statusMessage.textContent=message.failure
                 })
                 .finally(()=>{
@@ -51,13 +56,11 @@ const forms=(state)=>{
                     // 
                     setTimeout(() => {
                         statusMessage.remove();
-                       // document.body.classList.remove('modal-open');   
-                        
                         let divModal=document.querySelector('.popup_calc_end');
                         divModal.style.display='none';     
                         document.body.style.overflow='visible';
                         Object.keys(state).forEach(key => delete state[key]);
-                    }, 1000);
+                    }, 2000);
                 })
 
         });

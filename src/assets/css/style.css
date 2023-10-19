@@ -1081,7 +1081,7 @@ textarea:focus {
 }
 
 .no-background {
-  background: url();
+  background: none;
 }
 
 .checkbox-custom[id="warm"]::before {
@@ -1844,4 +1844,10 @@ textarea:focus {
     -webkit-animation: none !important;
     animation: none !important;
   }
+}
+
+
+.button[disabled] {
+  cursor: default;
+  background: grey;
 }
